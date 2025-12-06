@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Visual_Studio\VsCode\GhostEscape\build\CMakeFiles\8bd8de54d09731fc1d5cb9a198e3fc97\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{5A7A8184-485C-326F-A323-A0B70875DC8B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
