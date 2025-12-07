@@ -8,7 +8,7 @@ struct Texture
     SDL_FRect src_rect = {0, 0, 0, 0};
     float angle = 0;
     bool is_flip = false;
-    Texture()=default;
+    Texture() = default;
     Texture(const std::string &file_path);
 };
 
@@ -18,8 +18,12 @@ protected:
     Texture texture_;
 
 public:
+    static Sprite *addSpriteChild(ObjectScreen *parent, const std::string &file_path, float scale = 1.0f);
+
     virtual void render() override;
 
+    void setScale(float scale) { size_ *= scale; }
+
     Texture getTexture() { return texture_; }
-    void setTexture(const Texture &texture);
+    virtual void setTexture(const Texture &texture);
 };
