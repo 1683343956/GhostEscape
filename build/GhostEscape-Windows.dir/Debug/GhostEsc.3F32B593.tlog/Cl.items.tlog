@@ -2,3 +2,9 @@ D:\Visual_Studio\VsCode\GhostEscape\src\main.cpp;D:\Visual_Studio\VsCode\GhostEs
 D:\Visual_Studio\VsCode\GhostEscape\src\core\game.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\game.obj
 D:\Visual_Studio\VsCode\GhostEscape\src\core\scene.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\scene.obj
 D:\Visual_Studio\VsCode\GhostEscape\src\scene_main.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\scene_main.obj
+D:\Visual_Studio\VsCode\GhostEscape\src\core\object_world.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\object_world.obj
+D:\Visual_Studio\VsCode\GhostEscape\src\player.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\player.obj
+D:\Visual_Studio\VsCode\GhostEscape\src\core\asset_store.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\asset_store.obj
+D:\Visual_Studio\VsCode\GhostEscape\src\core\object.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\object.obj
+D:\Visual_Studio\VsCode\GhostEscape\src\core\object_affiliate.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\object_affiliate.obj
+D:\Visual_Studio\VsCode\GhostEscape\src\affiliate\sprite.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\sprite.obj

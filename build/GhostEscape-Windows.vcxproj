@@ -340,6 +340,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\core\game.cpp" />
     <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\core\scene.cpp" />
     <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\scene_main.cpp" />
+    <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\core\object_world.cpp" />
+    <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\player.cpp" />
+    <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\core\asset_store.cpp" />
+    <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\core\object.cpp" />
+    <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\core\object_affiliate.cpp" />
+    <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\affiliate\sprite.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

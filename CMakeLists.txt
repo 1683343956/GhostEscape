@@ -31,6 +31,12 @@ add_executable(${TARGET}    src/main.cpp
                             src/core/game.cpp
                             src/core/scene.cpp
                             src/scene_main.cpp
+                            src/core/object_world.cpp
+                            src/player.cpp
+                            src/core/asset_store.cpp
+                            src/core/object.cpp
+                            src/core/object_affiliate.cpp
+                            src/affiliate/sprite.cpp
                             )
 
 # 链接库

@@ -1,19 +1,53 @@
 #pragma once
-#include"object.h"
-#include"glm/glm.hpp"
-#include<vector>
+#include "object.h"
+#include "object_world.h"
+#include "object_screen.h"
+#include "glm/glm.hpp"
+#include <vector>
 
-class Scene: public Object
+class Scene : public Object
 {
 protected:
-    glm::vec2 camera_position=glm::vec2(0);
-    std::vector<Object*> objects;
+    glm::vec2 camera_position_ = glm::vec2(0);    // 相机位置
+    glm::vec2 world_size_ = glm::vec2(0);         // 世界大小
+    std::vector<ObjectWorld *> children_world_;   // 世界中的物体
+    std::vector<ObjectScreen *> children_screen_; // 屏幕中的物体
 public:
-    Scene()=default;
-    ~Scene()=default;
-    void init() override;
-    void handleEvents(SDL_Event &event) override;
-    void update(float deltaTime) override;
-    void render() override;
-    void clean() override;
+    Scene() = default;
+    ~Scene() = default;
+    virtual void init() override;
+    virtual void handleEvents(SDL_Event &event) override;
+    virtual void update(float deltaTime) override;
+    virtual void render() override;
+    virtual void clean() override;
+
+    virtual void addChild(Object *child) override;
+    virtual void removeChild(Object *child) override;
+
+    glm::vec2 worldToScreen(const glm::vec2 &world_position) const
+    {
+        return world_position - camera_position_;
+    }
+
+    glm::vec2 screenToWorld(const glm::vec2 &screen_position) const
+    {
+        return screen_position + camera_position_;
+    }
+
+    glm::vec2 getCameraPosition() const
+    {
+        return camera_position_;
+    }
+
+    void setCameraPosition(const glm::vec2 &camera_position);
+
+    glm::vec2 getWorldSize() const
+    {
+        return world_size_;
+    }
+
+    void setWorldSize(const glm::vec2 &world_size)
+    {
+        world_size_ = world_size;
+    }
 };
