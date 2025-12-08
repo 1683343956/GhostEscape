@@ -32,4 +32,7 @@ void SpriteAnim::setTexture(const Texture &texture)
     total_frames_ = texture.src_rect.w / texture.src_rect.h;
     texture_.src_rect.w = texture.src_rect.h;
     size_ = glm::vec2(texture_.src_rect.w, texture_.src_rect.h);
+    // total_frames_ = 5;
+    // texture_.src_rect.w = texture.src_rect.w/5;
+    // size_ = glm::vec2(texture_.src_rect.w, texture_.src_rect.h);
 }

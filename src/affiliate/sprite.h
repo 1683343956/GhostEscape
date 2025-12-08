@@ -26,4 +26,9 @@ public:
 
     Texture getTexture() { return texture_; }
     virtual void setTexture(const Texture &texture);
+
+    void setFlip(bool is_flip) { texture_.is_flip = is_flip; }
+    bool getFlip() { return texture_.is_flip; }
+    void setAngle(float angle) { texture_.angle = angle; }
+    float getAngle() { return texture_.angle; }
 };

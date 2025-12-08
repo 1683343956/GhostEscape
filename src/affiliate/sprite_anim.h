@@ -10,7 +10,7 @@ private:
     float frame_timer_ = 0.0f;
 
 public:
-    static SpriteAnim *addSpriteAnimChild(ObjectScreen *parent, const std::string &file_path, float scale=1.0f);
+    static SpriteAnim *addSpriteAnimChild(ObjectScreen *parent, const std::string &file_path, float scale = 1.0f);
 
     virtual void update(float delta_time) override;
 
@@ -22,4 +22,6 @@ public:
     void setTotalFrames(int total_frames) { total_frames_ = total_frames; }
     int getFps() const { return fps_; }
     void setFps(int fps) { fps_ = fps; }
+    float getFrameTimer() const { return frame_timer_; }
+    void setFrameTimer(float frame_timer) { frame_timer_ = frame_timer; }
 };

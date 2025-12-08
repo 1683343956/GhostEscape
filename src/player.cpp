@@ -1,12 +1,15 @@
 #include "player.h"
 #include "core/scene.h"
-#include "affiliate/sprite_anim.h"
 
 void Player::init()
 {
     Actor::init();
     max_speed_ = 500.0f;
-   SpriteAnim::addSpriteAnimChild(this, "assets/sprite/ghost-idle.png",2.0f);
+    sprite_idle_ = SpriteAnim::addSpriteAnimChild(this, "assets/sprite/ghost-idle.png", 2.0f);
+    sprite_move_ = SpriteAnim::addSpriteAnimChild(this, "assets/sprite/ghost-move.png", 2.0f);
+    // sprite_idle_ = SpriteAnim::addSpriteAnimChild(this, "assets/sprite/idle.png", 1.0f);
+    // sprite_move_ = SpriteAnim::addSpriteAnimChild(this, "assets/sprite/run.png", 1.0f);
+    sprite_move_->setActive(false);
 }
 
 void Player::handleEvents(SDL_Event &event)
@@ -17,6 +20,7 @@ void Player::update(float deltaTime)
 {
     Actor::update(deltaTime);
     keyboardControl();
+    checkStates();
     move(deltaTime);
     syncCamera();
 }
@@ -33,7 +37,7 @@ void Player::clean()
 void Player::keyboardControl()
 {
     velocity_ *= 0.9f;
-    if ((velocity_.x < 10.0f && velocity_.x > -10.0f) && (velocity_.y < 10.0f && velocity_.y > -10.0f))
+    if (glm::length(velocity_) < 0.1f)
         velocity_ = glm::vec2(0.0f, 0.0f);
 
     auto currentKeyStates = SDL_GetKeyboardState(NULL);
@@ -89,4 +93,43 @@ void Player::move(float deltaTime)
 void Player::syncCamera()
 {
     game_.getCurrentScene()->setCameraPosition(position_ - game_.getScreenSize() / 2.0f);
+}
+
+void Player::checkStates()
+{
+    if (velocity_.x < 0)
+    {
+        sprite_idle_->setFlip(true);
+        sprite_move_->setFlip(true);
+    }
+    else if (velocity_.x > 0)
+    {
+        sprite_idle_->setFlip(false);
+        sprite_move_->setFlip(false);
+    }
+
+    bool new_is_moving = glm::length(velocity_) > 0.1f;
+    if(new_is_moving != is_moving_)
+    {
+        is_moving_ = new_is_moving;
+        changeState(is_moving_);
+    }
+}
+
+void Player::changeState(bool is_moving)
+{
+    if(is_moving)
+    {
+        sprite_idle_->setActive(false);
+        sprite_move_->setActive(true);
+        sprite_move_->setCurrentFrame(sprite_idle_->getCurrentFrame());
+        sprite_move_->setFrameTimer(sprite_idle_->getFrameTimer());
+    }
+    else
+    {
+        sprite_idle_->setActive(true);
+        sprite_move_->setActive(false);
+        sprite_idle_->setCurrentFrame(sprite_move_->getCurrentFrame());
+        sprite_idle_->setFrameTimer(sprite_move_->getFrameTimer());
+    }
 }

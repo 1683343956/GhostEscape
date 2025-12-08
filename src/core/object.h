@@ -8,6 +8,7 @@ protected:
     ObjectType type_ = ObjectType::NONE;
     Game &game_ = Game::GetInstance();
     std::vector<Object *> children_;
+    bool is_active_ = true;
 
 public:
     Object() = default;
@@ -23,6 +24,9 @@ public:
     {
         children_.erase(std::remove(children_.begin(), children_.end(), child), children_.end());
     }
+
     ObjectType getType() const { return type_; }
     void setType(ObjectType type) { type_ = type; }
+    void setActive(bool active) { is_active_ = active; }
+    bool getActive() const { return is_active_; }
 };
