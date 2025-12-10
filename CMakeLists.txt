@@ -38,6 +38,10 @@ add_executable(${TARGET}    src/main.cpp
                             src/core/object_affiliate.cpp
                             src/affiliate/sprite.cpp
                             src/affiliate/sprite_anim.cpp
+                            src/enemy.cpp
+                            src/core/actor.cpp
+                            src/affiliate/collider.cpp
+                            src/raw/stats.cpp
                             )
 
 # 链接库

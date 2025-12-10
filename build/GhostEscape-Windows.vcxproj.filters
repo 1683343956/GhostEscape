@@ -34,6 +34,18 @@
     <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\affiliate\sprite_anim.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\core\actor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\affiliate\collider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Visual_Studio\VsCode\GhostEscape\src\raw\stats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Visual_Studio\VsCode\GhostEscape\CMakeLists.txt" />

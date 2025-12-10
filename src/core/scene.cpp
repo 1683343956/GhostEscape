@@ -6,21 +6,60 @@ void Scene::init()
 void Scene::update(float deltaTime)
 {
     Object::update(deltaTime);
-    for (auto &child : children_screen_)
+
+    for (auto it = children_screen_.begin(); it != children_screen_.end();)
     {
-        if (child->getActive())
+        auto child = *it;
+        if (child->getNeedRemove())
         {
-            child->update(deltaTime);
+            it = children_screen_.erase(it);
+            child->clean();
+            delete child;
+        }
+        else
+        {
+            if (child->getActive())
+            {
+                child->update(deltaTime);
+            }
+            ++it;
         }
     }
 
-    for (auto &child : children_world_)
+    for (auto it = children_world_.begin(); it != children_world_.end();)
     {
-        if (child->getActive())
+        auto child = *it;
+        if (child->getNeedRemove())
         {
-            child->update(deltaTime);
+            it = children_world_.erase(it);
+            child->clean();
+            delete child;
+        }
+        else
+        {
+            if (child->getActive())
+            {
+                child->update(deltaTime);
+            }
+            ++it;
         }
     }
+
+    // for (auto &child : children_screen_)
+    // {
+    //     if (child->getActive())
+    //     {
+    //         child->update(deltaTime);
+    //     }
+    // }
+
+    // for (auto &child : children_world_)
+    // {
+    //     if (child->getActive())
+    //     {
+    //         child->update(deltaTime);
+    //     }
+    // }
 }
 void Scene::render()
 {

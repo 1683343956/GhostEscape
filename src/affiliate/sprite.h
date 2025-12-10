@@ -16,13 +16,13 @@ class Sprite : public ObjectAffiliate
 {
 protected:
     Texture texture_;
+    bool is_finish_ = false;
 
 public:
-    static Sprite *addSpriteChild(ObjectScreen *parent, const std::string &file_path, float scale = 1.0f);
+    static Sprite *addSpriteChild(ObjectScreen *parent, const std::string &file_path,
+                                  float scale = 1.0f, Anchor anchor = Anchor::CENTER);
 
     virtual void render() override;
-
-    void setScale(float scale) { size_ *= scale; }
 
     Texture getTexture() { return texture_; }
     virtual void setTexture(const Texture &texture);
@@ -31,4 +31,6 @@ public:
     bool getFlip() { return texture_.is_flip; }
     void setAngle(float angle) { texture_.angle = angle; }
     float getAngle() { return texture_.angle; }
+    bool getFinish() const { return is_finish_; }
+    void setFinish(bool is_finish) { this->is_finish_ = is_finish; }
 };

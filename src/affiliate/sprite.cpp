@@ -6,7 +6,8 @@ Texture::Texture(const std::string &file_path)
     SDL_GetTextureSize(texture, &src_rect.w, &src_rect.h);
 }
 
-Sprite *Sprite::addSpriteChild(ObjectScreen *parent, const std::string &file_path, float scale)
+Sprite *Sprite::addSpriteChild(ObjectScreen *parent, const std::string &file_path,
+                               float scale, Anchor anchor)
 {
     auto sprite = new Sprite();
     sprite->init();
@@ -19,11 +20,7 @@ Sprite *Sprite::addSpriteChild(ObjectScreen *parent, const std::string &file_pat
 
 void Sprite::render()
 {
-    if (texture_.texture == nullptr)
-    {
-        return;
-    }
-    if (parent_ == nullptr)
+    if (!texture_.texture || !parent_ || is_finish_)
     {
         return;
     }
@@ -34,5 +31,5 @@ void Sprite::render()
 void Sprite::setTexture(const Texture &texture)
 {
     texture_ = texture;
-    size_=glm::vec2(texture_.src_rect.w, texture_.src_rect.h);
+    size_ = glm::vec2(texture_.src_rect.w, texture_.src_rect.h);
 }

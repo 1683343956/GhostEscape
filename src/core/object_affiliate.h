@@ -7,8 +7,10 @@ protected:
     ObjectScreen *parent_ = nullptr;
     glm::vec2 offset_ = glm::vec2(0, 0);
     glm::vec2 size_ = glm::vec2(0, 0);
+    Anchor anchor_ = Anchor::CENTER; // 锚点
 
 public:
+    void setOffsetByAnchor(Anchor &anchor);
     ObjectScreen *getParent() const { return parent_; }
     void setParent(ObjectScreen *parent) { parent_ = parent; }
 
@@ -16,5 +18,9 @@ public:
     void setOffset(const glm::vec2 &offset) { offset_ = offset; }
 
     glm::vec2 getSize() const { return size_; }
-    void setSize(const glm::vec2 &size) { size_ = size; }
+    void setSize(const glm::vec2 &size);
+    void setScale(float scale);
+
+    Anchor getAnchor() const { return anchor_; }
+    void setAnchor(Anchor anchor) { anchor_ = anchor; }
 };

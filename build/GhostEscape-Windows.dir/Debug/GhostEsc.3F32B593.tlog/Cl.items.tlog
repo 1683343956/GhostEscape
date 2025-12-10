@@ -9,3 +9,7 @@ D:\Visual_Studio\VsCode\GhostEscape\src\core\object.cpp;D:\Visual_Studio\VsCode\
 D:\Visual_Studio\VsCode\GhostEscape\src\core\object_affiliate.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\object_affiliate.obj
 D:\Visual_Studio\VsCode\GhostEscape\src\affiliate\sprite.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\sprite.obj
 D:\Visual_Studio\VsCode\GhostEscape\src\affiliate\sprite_anim.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\sprite_anim.obj
+D:\Visual_Studio\VsCode\GhostEscape\src\enemy.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\enemy.obj
+D:\Visual_Studio\VsCode\GhostEscape\src\core\actor.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\actor.obj
+D:\Visual_Studio\VsCode\GhostEscape\src\affiliate\collider.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\collider.obj
+D:\Visual_Studio\VsCode\GhostEscape\src\raw\stats.cpp;D:\Visual_Studio\VsCode\GhostEscape\build\GhostEscape-Windows.dir\Debug\stats.obj

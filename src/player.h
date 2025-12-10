@@ -12,7 +12,7 @@ public:
     virtual void clean();
 
     void keyboardControl();
-    void move(float deltaTime);
+    virtual void move(float deltaTime) override;
     void syncCamera();
     void checkStates();
     void changeState(bool is_moving);
